@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تقييم سيف ويوري</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+
+    :root {
+      --oud: #4b2517;
+      --gold: #d9aa63;
+      --cream: #fff4df;
+      --pink: #ff8fa3;
+      --border: rgba(217, 170, 99, 0.35);
+      --green: #70ffb2;
+      --red: #ff8b8b;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(255, 143, 163, 0.18), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(217, 170, 99, 0.22), transparent 40%),
+        linear-gradient(135deg, #170906, #4b2517 50%, #28110b);
+      color: var(--cream);
+      overflow-x: hidden;
+    }
+
+    .bg-hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.16;
+      background-image:
+        radial-gradient(circle, #fff4df 1px, transparent 1px),
+        radial-gradient(circle, #ff8fa3 1px, transparent 1px);
+      background-size: 45px 45px, 75px 75px;
+      animation: moveBg 18s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes moveBg {
+      from { transform: translateY(0); }
+      to { transform: translateY(-80px); }
+    }
+
+    .entry-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      background:
+        radial-gradient(circle at top, rgba(255, 143, 163, 0.18), transparent 35%),
+        linear-gradient(135deg, #170906, #4b2517 55%, #28110b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+
+    .entry-card {
+      width: min(760px, 100%);
+      border: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.24);
+      border-radius: 32px;
+      padding: 28px;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.45);
+      text-align: center;
+      backdrop-filter: blur(12px);
+    }
+
+    .entry-card h1 {
+      font-size: clamp(32px, 6vw, 58px);
+      margin-bottom: 10px;
+    }
+
+    .entry-card p {
+      color: #f5d9b0;
+      line-height: 1.8;
+      margin-bottom: 22px;
+    }
+
+    .cloud-status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 15px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.07);
+      margin-bottom: 18px;
+      font-size: 14px;
+      color: #f5d9b0;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 12px var(--gold);
+    }
+
+    .dot.ok {
+      background: var(--green);
+      box-shadow: 0 0 12px var(--green);
+    }
+
+    .dot.bad {
+      background: var(--red);
+      box-shadow: 0 0 12px var(--red);
+    }
+
+    .choose-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+
+    .person-box {
+      border: 2px solid var(--border);
+      background: rgba(255, 244, 223, 0.08);
+      border-radius: 24px;
+      padding: 30px 15px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      user-select: none;
+    }
+
+    .person-box:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .person-box.selected {
+      background: linear-gradient(135deg, var(--gold), #f0c987);
+      color: #241008;
+      box-shadow: 0 0 30px rgba(217, 170, 99, 0.28);
+      border-color: #fff0bd;
+    }
+
+    .person-box .emoji {
+      font-size: 44px;
+      margin-bottom: 8px;
+    }
+
+    .person-box h2 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .person-box span {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .continue-btn {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--gold), #f0c987);
+      color: #241008;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .continue-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .container {
+      width: min(1200px, 94%);
+      margin: auto;
+      padding: 28px 0 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 34px 20px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03));
+      box-shadow: 0 20px 70px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 8px 18px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--gold);
+      background: rgba(0,0,0,0.18);
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 6vw, 56px);
+      margin-bottom: 12px;
+      text-shadow: 0 0 25px rgba(217, 170, 99, 0.35);
+    }
+
+    .hero p {
+      color: #f5d9b0;
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .panel {
+      border: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.20);
+      border-radius: 24px;
+      padding: 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.25);
+    }
+
+    .current-user {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .current-user h2 {
+      color: var(--gold);
+      font-size: 24px;
+      line-height: 1.6;
+    }
+
+    .small-btn {
+      border: 1px solid var(--border);
+      background: rgba(255, 244, 223, 0.08);
+      color: var(--cream);
+      padding: 12px 16px;
+      border-radius: 14px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .save-line {
+      margin-top: 12px;
+      color: #f5d9b0;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .stat {
+      border: 1px solid var(--border);
+      background: rgba(255, 244, 223, 0.09);
+      border-radius: 18px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 26px;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: #f0d8b9;
+      font-size: 13px;
+    }
+
+    .progress-wrap {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255, 244, 223, 0.12);
+      overflow: hidden;
+      margin-bottom: 22px;
+      border: 1px solid rgba(217,170,99,0.18);
+    }
+
+    .progress {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--pink), var(--gold));
+      border-radius: 999px;
+      transition: width 0.25s ease;
+    }
+
+    .questions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .question-card {
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+    }
+
+    .q-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .q-num {
+      color: #281109;
+      background: var(--gold);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .q-text {
+      line-height: 1.8;
+      font-size: 17px;
+      color: #fff4df;
+      flex: 1;
+    }
+
+    .rating {
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+      gap: 7px;
+    }
+
+    .rate-btn {
+      min-height: 38px;
+      border-radius: 12px;
+      background: rgba(255, 244, 223, 0.10);
+      color: var(--cream);
+      border: 1px solid rgba(217, 170, 99, 0.24);
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .rate-btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+    }
+
+    .rate-btn.selected {
+      background: linear-gradient(135deg, var(--pink), var(--gold));
+      color: #1b0d09;
+      box-shadow: 0 0 18px rgba(255,143,163,0.22);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: sticky;
+      bottom: 12px;
+      z-index: 4;
+      margin: 24px 0;
+      padding: 12px;
+      border: 1px solid var(--border);
+      background: rgba(27, 13, 9, 0.88);
+      backdrop-filter: blur(12px);
+      border-radius: 22px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+    }
+
+    .main-btn {
+      flex: 1;
+      min-width: 160px;
+      padding: 14px 18px;
+      border-radius: 16px;
+      color: #211008;
+      background: linear-gradient(135deg, var(--gold), #f0c987);
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .danger {
+      color: var(--cream);
+      background: rgba(255, 143, 163, 0.14);
+      border: 1px solid rgba(255,143,163,0.35);
+    }
+
+    .result {
+      display: none;
+      margin-top: 20px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.25);
+      border-radius: 24px;
+      padding: 20px;
+    }
+
+    .result.show {
+      display: block;
+    }
+
+    .result h2 {
+      color: var(--gold);
+      margin-bottom: 13px;
+      font-size: 28px;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 15px;
+    }
+
+    .result-box {
+      background: rgba(255, 244, 223, 0.08);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      line-height: 1.9;
+    }
+
+    .result-box strong {
+      color: var(--gold);
+      font-size: 28px;
+      display: block;
+      margin: 5px 0;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid rgba(217,170,99,0.18);
+      padding-top: 8px;
+      margin-top: 8px;
+      color: #f6d9ae;
+    }
+
+    .love-msg {
+      margin-top: 15px;
+      padding: 16px;
+      border-radius: 18px;
+      color: #281109;
+      background: linear-gradient(135deg, #fff4df, #d9aa63);
+      line-height: 1.8;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      color: #d7b98d;
+      margin-top: 28px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 760px) {
+      .choose-grid,
+      .stats,
+      .result-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .rating {
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      .q-top {
+        flex-direction: column;
+      }
+
+      .container {
+        width: 95%;
+        padding-top: 18px;
+      }
+
+      .hero {
+        padding: 28px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-hearts"></div>
+
+  <section class="entry-screen" id="entryScreen">
+    <div class="entry-card">
+      <h1>مين بيدخل؟ 🤎</h1>
+
+      <div class="cloud-status">
+        <span class="dot" id="cloudDot"></span>
+        <span id="cloudText">جاري الاتصال بالحفظ السحابي...</span>
+      </div>
+
+      <p>اختار الشخص أولاً، بعدها اضغط متابعة عشان تظهر لك أسئلة تقييم الطرف الثاني.</p>
+
+      <div class="choose-grid">
+        <div class="person-box" id="chooseSaif" onclick="choosePerson('saif')">
+          <div class="emoji">🤎</div>
+          <h2>سيف</h2>
+          <span>سيف يقيم يوري</span>
+        </div>
+
+        <div class="person-box" id="chooseYuri" onclick="choosePerson('yuri')">
+          <div class="emoji">🌸</div>
+          <h2>يوري</h2>
+          <span>يوري تقيم سيف</span>
+        </div>
+      </div>
+
+      <button class="continue-btn" id="continueBtn" onclick="enterSite()" disabled>متابعة</button>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="hero">
+      <div class="badge">🤎 تقييم رومنسي عودي 🤎</div>
+      <h1>تقييم سيف ويوري</h1>
+      <p>
+        كل طرف يجاوب على 100 سؤال بتقييم من 0 إلى 10.
+        كل الإجابات تنحفظ سحابيًا وتظهر للطرفين من أي جهاز.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="current-user">
+        <h2 id="currentTitle">اختر الشخص أولاً</h2>
+        <button class="small-btn" onclick="backToChoose()">تغيير الشخص</button>
+      </div>
+
+      <div class="save-line" id="saveLine">
+        حالة الحفظ: جاري التجهيز...
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <strong id="answeredCount">0</strong>
+        <span>تمت الإجابة</span>
+      </div>
+      <div class="stat">
+        <strong id="leftCount">100</strong>
+        <span>المتبقي</span>
+      </div>
+      <div class="stat">
+        <strong id="avgScore">0</strong>
+        <span>المتوسط من 10</span>
+      </div>
+      <div class="stat">
+        <strong id="percentScore">0%</strong>
+        <span>نسبة التقييم</span>
+      </div>
+    </section>
+
+    <div class="progress-wrap">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <main class="questions" id="questions"></main>
+
+    <div class="actions">
+      <button class="main-btn" onclick="showResultsMenu()">قائمة النتائج</button>
+      <button class="main-btn" onclick="scrollToTopSmooth()">الرجوع للأعلى</button>
+      <button class="main-btn danger" onclick="resetCurrent()">تصفير تقييمي فقط</button>
+      <button class="main-btn danger" onclick="resetAll()">تصفير كل النتائج</button>
+    </div>
+
+    <section class="result" id="result"></section>
+
+    <footer>
+      صنع بحب لسيف ويوري 🤎
+    </footer>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+    import {
+      getFirestore,
+      doc,
+      getDoc,
+      setDoc,
+      updateDoc,
+      onSnapshot,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDBPDHHt1whqAki3w2nzI9MJxKMCgeoB3c",
+      authDomain: "gogogggggggggsdfds.firebaseapp.com",
+      projectId: "gogogggggggggsdfds",
+      storageBucket: "gogogggggggggsdfds.firebasestorage.app",
+      messagingSenderId: "373086079815",
+      appId: "1:373086079815:web:b3622aa89e6c73952b1a62",
+      measurementId: "G-X3HSDQBDQD"
+    };
+
+    const ROOM_ID = "saif_yuri_private_rating";
+
+    const questions = [
+      "كم تقيم الاهتمام اليومي بينكم؟",
+      "كم تقيم سرعة الرد على الرسائل؟",
+      "كم تقيم السؤال عن الحال بدون طلب؟",
+      "كم تقيم تذكر التفاصيل الصغيرة؟",
+      "كم تقيم الدعم وقت الزعل؟",
+      "كم تقيم تقدير التعب والمجهود؟",
+      "كم تقيم احترام الوقت والانشغال؟",
+      "كم تقيم الصراحة بينكم؟",
+      "كم تقيم الثقة في العلاقة؟",
+      "كم تقيم الوفاء والالتزام؟",
+      "كم تقيم الكلام الحلو والرومنسي؟",
+      "كم تقيم التعبير عن الحب بالكلام؟",
+      "كم تقيم التعبير عن الحب بالأفعال؟",
+      "كم تقيم المفاجآت الجميلة؟",
+      "كم تقيم اللطف في التعامل؟",
+      "كم تقيم الحنية وقت الاحتياج؟",
+      "كم تقيم الإحساس بمشاعر الطرف الثاني؟",
+      "كم تقيم الاحتواء وقت الضغط؟",
+      "كم تقيم إرسال رسائل حب مفاجئة؟",
+      "كم تقيم تلطيف الجو وقت الزعل؟",
+      "كم تقيم طريقة الاعتذار؟",
+      "كم تقيم قبول الاعتذار؟",
+      "كم تقيم الهدوء وقت الخلاف؟",
+      "كم تقيم عدم رفع الصوت وقت النقاش؟",
+      "كم تقيم حل المشاكل بسرعة؟",
+      "كم تقيم عدم تكرار نفس الخطأ؟",
+      "كم تقيم احترام رأي الطرف الثاني؟",
+      "كم تقيم عدم العناد الزائد؟",
+      "كم تقيم المصارحة وقت الضيق؟",
+      "كم تقيم إنهاء الزعل بطريقة لطيفة؟",
+      "كم تقيم مشاركة تفاصيل اليوم؟",
+      "كم تقيم الاهتمام بالمناسبات الخاصة؟",
+      "كم تقيم تذكر تاريخ بداية العلاقة؟",
+      "كم تقيم تذكر الأشياء المفضلة؟",
+      "كم تقيم معرفة الأشياء التي تزعج الطرف الثاني؟",
+      "كم تقيم محاولة إسعاد الطرف الثاني؟",
+      "كم تقيم المبادرة بالكلام؟",
+      "كم تقيم المبادرة بالصلح؟",
+      "كم تقيم المبادرة بالسؤال؟",
+      "كم تقيم المبادرة بالاهتمام؟",
+      "كم تقيم الاحترام أمام الناس؟",
+      "كم تقيم الاحترام في الخاص؟",
+      "كم تقيم احترام الخصوصية؟",
+      "كم تقيم حفظ الأسرار؟",
+      "كم تقيم عدم إحراج الطرف الثاني؟",
+      "كم تقيم الدفاع عن العلاقة؟",
+      "كم تقيم الوضوح في الحدود؟",
+      "كم تقيم الأمان في الكلام؟",
+      "كم تقيم الشعور بالراحة؟",
+      "كم تقيم الشعور بالأمان؟",
+      "كم تقيم الغيرة بطريقة صحية؟",
+      "كم تقيم عدم المبالغة في الغيرة؟",
+      "كم تقيم الثقة رغم الغيرة؟",
+      "كم تقيم تفهم الطرف الثاني؟",
+      "كم تقيم عدم سوء الظن؟",
+      "كم تقيم عدم التجاهل وقت الانشغال؟",
+      "كم تقيم إخبار الطرف الثاني عند الانشغال؟",
+      "كم تقيم تقدير ظروف الطرف الثاني؟",
+      "كم تقيم الصبر على بعض؟",
+      "كم تقيم حسن النية؟",
+      "كم تقيم الضحك والوناسة بينكم؟",
+      "كم تقيم المزح بدون جرح؟",
+      "كم تقيم خفة الدم في العلاقة؟",
+      "كم تقيم صنع ذكريات جميلة؟",
+      "كم تقيم مشاركة الصور واللحظات؟",
+      "كم تقيم تشجيع الطرف الثاني؟",
+      "كم تقيم الفخر بإنجازات الطرف الثاني؟",
+      "كم تقيم الوقوف مع الطرف الثاني؟",
+      "كم تقيم التحفيز وقت الكسل؟",
+      "كم تقيم الاهتمام بالأحلام والطموحات؟",
+      "كم تقيم التخطيط للمستقبل؟",
+      "كم تقيم جدية العلاقة؟",
+      "كم تقيم وضوح النوايا؟",
+      "كم تقيم الكلام عن المستقبل؟",
+      "كم تقيم التعاون بينكم؟",
+      "كم تقيم تحمل المسؤولية؟",
+      "كم تقيم الالتزام بالوعود؟",
+      "كم تقيم عدم كسر الخاطر؟",
+      "كم تقيم مراعاة المشاعر؟",
+      "كم تقيم عدم البرود في العلاقة؟",
+      "كم تقيم جودة المكالمات بينكم؟",
+      "كم تقيم طول النفس في النقاش؟",
+      "كم تقيم الاهتمام بنبرة الكلام؟",
+      "كم تقيم الرد وقت الحاجة؟",
+      "كم تقيم عدم ترك الطرف الثاني محتار؟",
+      "كم تقيم الوضوح عند الزعل؟",
+      "كم تقيم طيبة القلب؟",
+      "كم تقيم نقاء العلاقة؟",
+      "كم تقيم الحب الحقيقي؟",
+      "كم تقيم الإخلاص في المشاعر؟",
+      "كم تقيم الرومانسية في المناسبات؟",
+      "كم تقيم الرسائل قبل النوم؟",
+      "كم تقيم الرسائل أول اليوم؟",
+      "كم تقيم قول كلمة أحبك؟",
+      "كم تقيم الاهتمام بالتفاصيل العاطفية؟",
+      "كم تقيم جعل الطرف الثاني أولوية؟",
+      "كم تقيم الشعور بأنك مرغوب؟",
+      "كم تقيم عدم التغير المفاجئ؟",
+      "كم تقيم الاستمرار بنفس الشغف؟",
+      "كم تقيم العلاقة بشكل عام؟"
+    ];
+
+    let data = {
+      active: null,
+      answers: {
+        saif: {},
+        yuri: {}
+      }
+    };
+
+    let pendingPerson = null;
+    let db = null;
+    let roomRef = null;
+    let cloudReady = false;
+
+    const entryScreen = document.getElementById("entryScreen");
+    const continueBtn = document.getElementById("continueBtn");
+    const chooseSaifBox = document.getElementById("chooseSaif");
+    const chooseYuriBox = document.getElementById("chooseYuri");
+    const questionsBox = document.getElementById("questions");
+    const resultBox = document.getElementById("result");
+    const cloudDot = document.getElementById("cloudDot");
+    const cloudText = document.getElementById("cloudText");
+    const saveLine = document.getElementById("saveLine");
+
+    function setCloudStatus(type, text) {
+      cloudDot.classList.remove("ok", "bad");
+      if (type === "ok") cloudDot.classList.add("ok");
+      if (type === "bad") cloudDot.classList.add("bad");
+      cloudText.textContent = text;
+      saveLine.textContent = "حالة الحفظ: " + text;
+    }
+
+    async function initFirebase() {
+      try {
+        const app = initializeApp(firebaseConfig);
+        db = getFirestore(app);
+        roomRef = doc(db, "coupleRatings", ROOM_ID);
+
+        const snap = await getDoc(roomRef);
+
+        if (!snap.exists()) {
+          await setDoc(roomRef, {
+            roomName: "تقييم سيف ويوري",
+            answers: {
+              saif: {},
+              yuri: {}
+            },
+            createdAt: serverTimestamp(),
+            updatedAt: serverTimestamp()
+          });
+        }
+
+        onSnapshot(roomRef, (snapshot) => {
+          if (!snapshot.exists()) return;
+
+          const cloudData = snapshot.data();
+
+          data.answers.saif = cloudData.answers?.saif || {};
+          data.answers.yuri = cloudData.answers?.yuri || {};
+
+          cloudReady = true;
+          setCloudStatus("ok", "متصل بالحفظ السحابي");
+
+          if (data.active) {
+            renderCurrentTitle();
+            renderQuestions();
+            updateStats();
+
+            if (resultBox.classList.contains("show")) {
+              showResultsMenu(false);
+            }
+          }
+        }, (error) => {
+          console.error(error);
+          cloudReady = false;
+          setCloudStatus("bad", "فشل الاتصال بالسحابة، تأكد من Firestore Rules");
+        });
+
+      } catch (error) {
+        console.error(error);
+        cloudReady = false;
+        setCloudStatus("bad", "خطأ في Firebase أو Firestore Rules");
+      }
+    }
+
+    async function saveAnswerToCloud(index, value) {
+      if (!cloudReady || !roomRef || !data.active) return;
+
+      try {
+        setCloudStatus("ok", "جاري الحفظ السحابي...");
+
+        await updateDoc(roomRef, {
+          [`answers.${data.active}.${index}`]: value,
+          updatedAt: serverTimestamp()
+        });
+
+        setCloudStatus("ok", "تم الحفظ السحابي بنجاح");
+      } catch (error) {
+        console.error(error);
+        setCloudStatus("bad", "فشل الحفظ، تأكد من Firestore Rules");
+      }
+    }
+
+    function choosePerson(person) {
+      pendingPerson = person;
+
+      chooseSaifBox.classList.toggle("selected", person === "saif");
+      chooseYuriBox.classList.toggle("selected", person === "yuri");
+
+      continueBtn.disabled = false;
+    }
+
+    function enterSite() {
+      if (!pendingPerson) return;
+
+      data.active = pendingPerson;
+      entryScreen.style.display = "none";
+      resultBox.classList.remove("show");
+
+      renderCurrentTitle();
+      renderQuestions();
+      updateStats();
+      scrollToTopSmooth();
+    }
+
+    function backToChoose() {
+      pendingPerson = data.active;
+
+      chooseSaifBox.classList.toggle("selected", pendingPerson === "saif");
+      chooseYuriBox.classList.toggle("selected", pendingPerson === "yuri");
+      continueBtn.disabled = !pendingPerson;
+
+      entryScreen.style.display = "flex";
+    }
+
+    function activeName() {
+      return data.active === "saif" ? "سيف" : "يوري";
+    }
+
+    function targetName() {
+      return data.active === "saif" ? "يوري" : "سيف";
+    }
+
+    function renderCurrentTitle() {
+      if (!data.active) {
+        document.getElementById("currentTitle").textContent = "اختر الشخص أولاً";
+        return;
+      }
+
+      document.getElementById("currentTitle").textContent =
+        `${activeName()} يقيم ${targetName()} الآن`;
+    }
+
+    function getActiveAnswers() {
+      if (!data.active) return {};
+      return data.answers[data.active] || {};
+    }
+
+    function renderQuestions() {
+      const answers = getActiveAnswers();
+
+      questionsBox.innerHTML = questions.map((q, i) => {
+        const selected = answers[i];
+
+        const buttons = Array.from({ length: 11 }, (_, n) => `
+          <button
+            class="rate-btn ${Number(selected) === n ? "selected" : ""}"
+            onclick="rateQuestion(${i}, ${n})"
+          >${n}</button>
+        `).join("");
+
+        return `
+          <div class="question-card">
+            <div class="q-top">
+              <div class="q-text">${q}</div>
+              <div class="q-num">سؤال ${i + 1}</div>
+            </div>
+            <div class="rating">${buttons}</div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function rateQuestion(index, value) {
+      if (!data.active) return;
+
+      data.answers[data.active][index] = value;
+
+      renderQuestions();
+      updateStats();
+      saveAnswerToCloud(index, value);
+    }
+
+    function calc(person) {
+      const answers = data.answers[person] || {};
+      const values = Object.values(answers).map(Number);
+      const answered = values.length;
+      const total = values.reduce((a, b) => a + b, 0);
+      const avg = answered ? total / answered : 0;
+      const percent = answered ? (total / (answered * 10)) * 100 : 0;
+
+      return {
+        answered,
+        left: questions.length - answered,
+        total,
+        avg,
+        percent
+      };
+    }
+
+    function updateStats() {
+      if (!data.active) return;
+
+      const c = calc(data.active);
+
+      document.getElementById("answeredCount").textContent = c.answered;
+      document.getElementById("leftCount").textContent = c.left;
+      document.getElementById("avgScore").textContent = c.avg.toFixed(1);
+      document.getElementById("percentScore").textContent = `${c.percent.toFixed(0)}%`;
+      document.getElementById("progress").style.width = `${(c.answered / questions.length) * 100}%`;
+    }
+
+    function loveLevel(percent) {
+      if (percent >= 95) return "حب أسطوري وفوق الخيال 🤎";
+      if (percent >= 90) return "حب قوي جدًا واهتمام واضح ✨";
+      if (percent >= 80) return "علاقة جميلة جدًا ومليانة مشاعر 🌙";
+      if (percent >= 70) return "حب حلو ويحتاج شوية تقوية 🤍";
+      if (percent >= 60) return "العلاقة طيبة لكن تحتاج اهتمام أكثر";
+      if (percent >= 40) return "فيه مشاعر، لكن تحتاجون مصارحة وتحسين";
+      return "النتيجة منخفضة، الأفضل جلسة صراحة واهتمام من الطرفين";
+    }
+
+    function showResultsMenu(scroll = true) {
+      const saif = calc("saif");
+      const yuri = calc("yuri");
+
+      const totalAnswered = saif.answered + yuri.answered;
+      const totalScore = saif.total + yuri.total;
+      const finalPercent = totalAnswered ? (totalScore / (totalAnswered * 10)) * 100 : 0;
+      const completePercent = (totalAnswered / (questions.length * 2)) * 100;
+
+      resultBox.innerHTML = `
+        <h2>قائمة النتائج للطرفين</h2>
+
+        <div class="result-grid">
+          <div class="result-box">
+            <div>نتيجة سيف في تقييم يوري</div>
+            <strong>${saif.percent.toFixed(0)}%</strong>
+
+            <div class="result-row">
+              <span>المتوسط</span>
+              <span>${saif.avg.toFixed(1)} من 10</span>
+            </div>
+
+            <div class="result-row">
+              <span>الإجابات</span>
+              <span>${saif.answered} من 100</span>
+            </div>
+
+            <div class="result-row">
+              <span>المتبقي</span>
+              <span>${saif.left}</span>
+            </div>
+          </div>
+
+          <div class="result-box">
+            <div>نتيجة يوري في تقييم سيف</div>
+            <strong>${yuri.percent.toFixed(0)}%</strong>
+
+            <div class="result-row">
+              <span>المتوسط</span>
+              <span>${yuri.avg.toFixed(1)} من 10</span>
+            </div>
+
+            <div class="result-row">
+              <span>الإجابات</span>
+              <span>${yuri.answered} من 100</span>
+            </div>
+
+            <div class="result-row">
+              <span>المتبقي</span>
+              <span>${yuri.left}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="love-msg">
+          النتيجة المشتركة حسب الإجابات الحالية: ${finalPercent.toFixed(0)}%
+          <br>
+          نسبة اكتمال التقييم للطرفين: ${completePercent.toFixed(0)}%
+          <br>
+          ${loveLevel(finalPercent)}
+        </div>
+      `;
+
+      resultBox.classList.add("show");
+
+      if (scroll) {
+        resultBox.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    async function resetCurrent() {
+      if (!data.active || !roomRef) return;
+
+      const ok = confirm(`متأكد تبي تصفر تقييم ${activeName()} فقط؟`);
+      if (!ok) return;
+
+      data.answers[data.active] = {};
+
+      renderQuestions();
+      updateStats();
+      resultBox.classList.remove("show");
+
+      try {
+        await updateDoc(roomRef, {
+          [`answers.${data.active}`]: {},
+          updatedAt: serverTimestamp()
+        });
+
+        setCloudStatus("ok", "تم تصفير تقييمك وحفظه سحابيًا");
+      } catch (error) {
+        console.error(error);
+        setCloudStatus("bad", "فشل تصفير تقييمك");
+      }
+    }
+
+    async function resetAll() {
+      if (!roomRef) return;
+
+      const ok = confirm("متأكد تبي تصفر كل نتائج سيف ويوري؟");
+      if (!ok) return;
+
+      data.answers.saif = {};
+      data.answers.yuri = {};
+
+      renderQuestions();
+      updateStats();
+      resultBox.classList.remove("show");
+
+      try {
+        await setDoc(roomRef, {
+          answers: {
+            saif: {},
+            yuri: {}
+          },
+          updatedAt: serverTimestamp()
+        }, { merge: true });
+
+        setCloudStatus("ok", "تم تصفير الكل وحفظه سحابيًا");
+      } catch (error) {
+        console.error(error);
+        setCloudStatus("bad", "فشل تصفير الكل");
+      }
+    }
+
+    function scrollToTopSmooth() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function startApp() {
+      entryScreen.style.display = "flex";
+      renderCurrentTitle();
+      renderQuestions();
+      initFirebase();
+    }
+
+    window.choosePerson = choosePerson;
+    window.enterSite = enterSite;
+    window.backToChoose = backToChoose;
+    window.rateQuestion = rateQuestion;
+    window.showResultsMenu = showResultsMenu;
+    window.resetCurrent = resetCurrent;
+    window.resetAll = resetAll;
+    window.scrollToTopSmooth = scrollToTopSmooth;
+
+    startApp();
+  </script>
+</body>
+</html>
