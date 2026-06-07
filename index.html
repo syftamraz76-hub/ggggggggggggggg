@@ -263,6 +263,42 @@
       line-height: 1.7;
     }
 
+    .app-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.20);
+      padding: 10px;
+      border-radius: 22px;
+    }
+
+    .app-tab {
+      padding: 14px 10px;
+      border-radius: 16px;
+      border: 1px solid rgba(217, 170, 99, 0.25);
+      background: rgba(255, 244, 223, 0.08);
+      color: var(--cream);
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .app-tab.active {
+      background: linear-gradient(135deg, var(--gold), #f0c987);
+      color: #211008;
+      box-shadow: 0 0 22px rgba(217, 170, 99, 0.22);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
     .stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -401,23 +437,11 @@
       font-weight: bold;
     }
 
-    .danger {
-      color: var(--cream);
-      background: rgba(255, 143, 163, 0.14);
-      border: 1px solid rgba(255,143,163,0.35);
-    }
-
     .result {
-      display: none;
-      margin-top: 20px;
       border: 1px solid var(--border);
       background: rgba(0,0,0,0.25);
       border-radius: 24px;
       padding: 20px;
-    }
-
-    .result.show {
-      display: block;
     }
 
     .result h2 {
@@ -468,6 +492,62 @@
       font-weight: bold;
     }
 
+    .reset-zone {
+      border: 1px solid rgba(255, 139, 139, 0.35);
+      background: rgba(0,0,0,0.25);
+      border-radius: 24px;
+      padding: 20px;
+    }
+
+    .reset-zone h2 {
+      color: #ffb3b3;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .reset-zone p {
+      color: #f5d9b0;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .reset-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .reset-card {
+      border: 1px solid rgba(255, 139, 139, 0.35);
+      background: rgba(255, 139, 139, 0.08);
+      border-radius: 20px;
+      padding: 18px;
+      line-height: 1.8;
+    }
+
+    .reset-card h3 {
+      color: #ffd0d0;
+      margin-bottom: 8px;
+      font-size: 22px;
+    }
+
+    .reset-btn {
+      width: 100%;
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 139, 139, 0.55);
+      color: var(--cream);
+      background: rgba(255, 80, 80, 0.18);
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .reset-btn:hover {
+      background: rgba(255, 80, 80, 0.28);
+    }
+
     footer {
       text-align: center;
       color: #d7b98d;
@@ -479,7 +559,12 @@
     @media (max-width: 760px) {
       .choose-grid,
       .stats,
-      .result-grid {
+      .result-grid,
+      .reset-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .app-tabs {
         grid-template-columns: 1fr;
       }
 
@@ -556,39 +641,74 @@
       </div>
     </section>
 
-    <section class="stats">
-      <div class="stat">
-        <strong id="answeredCount">0</strong>
-        <span>تمت الإجابة</span>
+    <nav class="app-tabs">
+      <button class="app-tab active" id="tabBtn_questionsTab" onclick="openTab('questionsTab')">الأسئلة</button>
+      <button class="app-tab" id="tabBtn_resultsTab" onclick="openTab('resultsTab')">النتائج</button>
+      <button class="app-tab" id="tabBtn_resetTab" onclick="openTab('resetTab')">التصفير</button>
+    </nav>
+
+    <section class="tab-content active" id="questionsTab">
+      <section class="stats">
+        <div class="stat">
+          <strong id="answeredCount">0</strong>
+          <span>تمت الإجابة</span>
+        </div>
+        <div class="stat">
+          <strong id="leftCount">100</strong>
+          <span>المتبقي</span>
+        </div>
+        <div class="stat">
+          <strong id="avgScore">0</strong>
+          <span>المتوسط من 10</span>
+        </div>
+        <div class="stat">
+          <strong id="percentScore">0%</strong>
+          <span>نسبة التقييم</span>
+        </div>
+      </section>
+
+      <div class="progress-wrap">
+        <div class="progress" id="progress"></div>
       </div>
-      <div class="stat">
-        <strong id="leftCount">100</strong>
-        <span>المتبقي</span>
-      </div>
-      <div class="stat">
-        <strong id="avgScore">0</strong>
-        <span>المتوسط من 10</span>
-      </div>
-      <div class="stat">
-        <strong id="percentScore">0%</strong>
-        <span>نسبة التقييم</span>
+
+      <main class="questions" id="questions"></main>
+
+      <div class="actions">
+        <button class="main-btn" onclick="openTab('resultsTab')">قائمة النتائج</button>
+        <button class="main-btn" onclick="scrollToTopSmooth()">الرجوع للأعلى</button>
       </div>
     </section>
 
-    <div class="progress-wrap">
-      <div class="progress" id="progress"></div>
-    </div>
+    <section class="tab-content" id="resultsTab">
+      <section class="result" id="result"></section>
+    </section>
 
-    <main class="questions" id="questions"></main>
+    <section class="tab-content" id="resetTab">
+      <div class="reset-zone">
+        <h2>تبويب التصفير</h2>
+        <p>
+          هذا التبويب مخصص للتصفير فقط. انتبه قبل الضغط، لأن التغييرات تنحفظ سحابيًا وتظهر للطرفين.
+        </p>
 
-    <div class="actions">
-      <button class="main-btn" onclick="showResultsMenu()">قائمة النتائج</button>
-      <button class="main-btn" onclick="scrollToTopSmooth()">الرجوع للأعلى</button>
-      <button class="main-btn danger" onclick="resetCurrent()">تصفير تقييمي فقط</button>
-      <button class="main-btn danger" onclick="resetAll()">تصفير كل النتائج</button>
-    </div>
+        <div class="reset-grid">
+          <div class="reset-card">
+            <h3>تصفير تقييمي فقط</h3>
+            <p>
+              يمسح إجابات الشخص الحالي فقط، مثلًا إذا داخل باسم سيف راح يمسح تقييم سيف فقط.
+            </p>
+            <button class="reset-btn" onclick="resetCurrent()">تصفير تقييمي فقط</button>
+          </div>
 
-    <section class="result" id="result"></section>
+          <div class="reset-card">
+            <h3>تصفير كل النتائج</h3>
+            <p>
+              يمسح تقييم سيف وتقييم يوري بالكامل من السحابة.
+            </p>
+            <button class="reset-btn" onclick="resetAll()">تصفير كل النتائج</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <footer>
       صنع بحب لسيف ويوري 🤎
@@ -734,6 +854,7 @@
     let db = null;
     let roomRef = null;
     let cloudReady = false;
+    let currentTab = "questionsTab";
 
     const entryScreen = document.getElementById("entryScreen");
     const continueBtn = document.getElementById("continueBtn");
@@ -751,6 +872,27 @@
       if (type === "bad") cloudDot.classList.add("bad");
       cloudText.textContent = text;
       saveLine.textContent = "حالة الحفظ: " + text;
+    }
+
+    function openTab(tabId) {
+      currentTab = tabId;
+
+      document.querySelectorAll(".tab-content").forEach(tab => {
+        tab.classList.remove("active");
+      });
+
+      document.querySelectorAll(".app-tab").forEach(btn => {
+        btn.classList.remove("active");
+      });
+
+      document.getElementById(tabId).classList.add("active");
+      document.getElementById("tabBtn_" + tabId).classList.add("active");
+
+      if (tabId === "resultsTab") {
+        renderResults();
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     async function initFirebase() {
@@ -789,8 +931,8 @@
             renderQuestions();
             updateStats();
 
-            if (resultBox.classList.contains("show")) {
-              showResultsMenu(false);
+            if (currentTab === "resultsTab") {
+              renderResults();
             }
           }
         }, (error) => {
@@ -838,12 +980,11 @@
 
       data.active = pendingPerson;
       entryScreen.style.display = "none";
-      resultBox.classList.remove("show");
 
       renderCurrentTitle();
       renderQuestions();
       updateStats();
-      scrollToTopSmooth();
+      openTab("questionsTab");
     }
 
     function backToChoose() {
@@ -953,7 +1094,7 @@
       return "النتيجة منخفضة، الأفضل جلسة صراحة واهتمام من الطرفين";
     }
 
-    function showResultsMenu(scroll = true) {
+    function renderResults() {
       const saif = calc("saif");
       const yuri = calc("yuri");
 
@@ -1015,16 +1156,18 @@
           ${loveLevel(finalPercent)}
         </div>
       `;
-
-      resultBox.classList.add("show");
-
-      if (scroll) {
-        resultBox.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
     }
 
     async function resetCurrent() {
-      if (!data.active || !roomRef) return;
+      if (!data.active) {
+        alert("لازم تختار سيف أو يوري أولاً.");
+        return;
+      }
+
+      if (!roomRef) {
+        alert("السحابة غير جاهزة الآن.");
+        return;
+      }
 
       const ok = confirm(`متأكد تبي تصفر تقييم ${activeName()} فقط؟`);
       if (!ok) return;
@@ -1033,7 +1176,10 @@
 
       renderQuestions();
       updateStats();
-      resultBox.classList.remove("show");
+
+      if (currentTab === "resultsTab") {
+        renderResults();
+      }
 
       try {
         await updateDoc(roomRef, {
@@ -1049,7 +1195,10 @@
     }
 
     async function resetAll() {
-      if (!roomRef) return;
+      if (!roomRef) {
+        alert("السحابة غير جاهزة الآن.");
+        return;
+      }
 
       const ok = confirm("متأكد تبي تصفر كل نتائج سيف ويوري؟");
       if (!ok) return;
@@ -1059,7 +1208,10 @@
 
       renderQuestions();
       updateStats();
-      resultBox.classList.remove("show");
+
+      if (currentTab === "resultsTab") {
+        renderResults();
+      }
 
       try {
         await setDoc(roomRef, {
@@ -1085,6 +1237,7 @@
       entryScreen.style.display = "flex";
       renderCurrentTitle();
       renderQuestions();
+      renderResults();
       initFirebase();
     }
 
@@ -1092,7 +1245,7 @@
     window.enterSite = enterSite;
     window.backToChoose = backToChoose;
     window.rateQuestion = rateQuestion;
-    window.showResultsMenu = showResultsMenu;
+    window.openTab = openTab;
     window.resetCurrent = resetCurrent;
     window.resetAll = resetAll;
     window.scrollToTopSmooth = scrollToTopSmooth;
