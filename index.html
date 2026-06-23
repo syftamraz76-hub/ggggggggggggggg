@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تقييم سيف ويوري</title>
+  <title>ذكرى حب سيف ويوري</title>
 
   <style>
     * {
@@ -14,21 +14,21 @@
     }
 
     :root {
-      --oud: #4b2517;
-      --gold: #d9aa63;
-      --cream: #fff4df;
-      --pink: #ff8fa3;
-      --border: rgba(217, 170, 99, 0.35);
+      --oud: #5b0614;
+      --gold: #ff2f67;
+      --cream: #fff0f4;
+      --pink: #ff9fba;
+      --border: rgba(255, 86, 122, 0.38);
       --green: #70ffb2;
-      --red: #ff8b8b;
+      --red: #ff4d6d;
     }
 
     body {
       min-height: 100vh;
       background:
-        radial-gradient(circle at top left, rgba(255, 143, 163, 0.18), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(217, 170, 99, 0.22), transparent 40%),
-        linear-gradient(135deg, #170906, #4b2517 50%, #28110b);
+        radial-gradient(circle at top left, rgba(255, 62, 105, 0.34), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(255, 47, 103, 0.28), transparent 40%),
+        linear-gradient(135deg, #190006, #71001c 50%, #32000e);
       color: var(--cream);
       overflow-x: hidden;
     }
@@ -39,8 +39,9 @@
       pointer-events: none;
       opacity: 0.16;
       background-image:
-        radial-gradient(circle, #fff4df 1px, transparent 1px),
-        radial-gradient(circle, #ff8fa3 1px, transparent 1px);
+        radial-gradient(circle, rgba(255,240,244,0.95) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,47,103,0.95) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(255,159,186,0.22) 0 6px, transparent 7px);
       background-size: 45px 45px, 75px 75px;
       animation: moveBg 18s linear infinite;
       z-index: 0;
@@ -56,8 +57,8 @@
       inset: 0;
       z-index: 99;
       background:
-        radial-gradient(circle at top, rgba(255, 143, 163, 0.18), transparent 35%),
-        linear-gradient(135deg, #170906, #4b2517 55%, #28110b);
+        radial-gradient(circle at top, rgba(255, 62, 105, 0.34), transparent 35%),
+        linear-gradient(135deg, #190006, #71001c 55%, #32000e);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -67,7 +68,7 @@
     .entry-card {
       width: min(760px, 100%);
       border: 1px solid var(--border);
-      background: rgba(0, 0, 0, 0.24);
+      background: rgba(40, 0, 12, 0.36);
       border-radius: 32px;
       padding: 28px;
       box-shadow: 0 30px 90px rgba(0,0,0,0.45);
@@ -81,7 +82,7 @@
     }
 
     .entry-card p {
-      color: #f5d9b0;
+      color: #ffd6df;
       line-height: 1.8;
       margin-bottom: 22px;
     }
@@ -97,7 +98,7 @@
       background: rgba(255,255,255,0.07);
       margin-bottom: 18px;
       font-size: 14px;
-      color: #f5d9b0;
+      color: #ffd6df;
     }
 
     .dot {
@@ -141,10 +142,10 @@
     }
 
     .person-box.selected {
-      background: linear-gradient(135deg, var(--gold), #f0c987);
-      color: #241008;
-      box-shadow: 0 0 30px rgba(217, 170, 99, 0.28);
-      border-color: #fff0bd;
+      background: linear-gradient(135deg, var(--gold), #ff87a6);
+      color: #2b000d;
+      box-shadow: 0 0 30px rgba(255, 47, 103, 0.34);
+      border-color: #ffd2de;
     }
 
     .person-box .emoji {
@@ -167,8 +168,8 @@
       padding: 15px;
       border: none;
       border-radius: 18px;
-      background: linear-gradient(135deg, var(--gold), #f0c987);
-      color: #241008;
+      background: linear-gradient(135deg, var(--gold), #ff87a6);
+      color: #2b000d;
       font-weight: bold;
       font-size: 18px;
       cursor: pointer;
@@ -204,7 +205,7 @@
       border: 1px solid var(--border);
       border-radius: 999px;
       color: var(--gold);
-      background: rgba(0,0,0,0.18);
+      background: rgba(40,0,12,0.24);
       margin-bottom: 14px;
       font-size: 14px;
     }
@@ -212,11 +213,11 @@
     h1 {
       font-size: clamp(30px, 6vw, 56px);
       margin-bottom: 12px;
-      text-shadow: 0 0 25px rgba(217, 170, 99, 0.35);
+      text-shadow: 0 0 25px rgba(255, 86, 122, 0.38);
     }
 
     .hero p {
-      color: #f5d9b0;
+      color: #ffd6df;
       font-size: 17px;
       line-height: 1.8;
       max-width: 800px;
@@ -225,11 +226,11 @@
 
     .panel {
       border: 1px solid var(--border);
-      background: rgba(0, 0, 0, 0.20);
+      background: rgba(40, 0, 12, 0.28);
       border-radius: 24px;
       padding: 18px;
       margin-bottom: 20px;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.25);
+      box-shadow: 0 14px 40px rgba(40,0,12,0.32);
     }
 
     .current-user {
@@ -258,18 +259,18 @@
 
     .save-line {
       margin-top: 12px;
-      color: #f5d9b0;
+      color: #ffd6df;
       font-size: 14px;
       line-height: 1.7;
     }
 
     .app-tabs {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 10px;
       margin-bottom: 20px;
       border: 1px solid var(--border);
-      background: rgba(0, 0, 0, 0.20);
+      background: rgba(40, 0, 12, 0.28);
       padding: 10px;
       border-radius: 22px;
     }
@@ -277,7 +278,7 @@
     .app-tab {
       padding: 14px 10px;
       border-radius: 16px;
-      border: 1px solid rgba(217, 170, 99, 0.25);
+      border: 1px solid rgba(255, 86, 122, 0.32);
       background: rgba(255, 244, 223, 0.08);
       color: var(--cream);
       cursor: pointer;
@@ -286,9 +287,9 @@
     }
 
     .app-tab.active {
-      background: linear-gradient(135deg, var(--gold), #f0c987);
-      color: #211008;
-      box-shadow: 0 0 22px rgba(217, 170, 99, 0.22);
+      background: linear-gradient(135deg, var(--gold), #ff87a6);
+      color: #2b000d;
+      box-shadow: 0 0 22px rgba(255, 47, 103, 0.28);
     }
 
     .tab-content {
@@ -322,7 +323,7 @@
     }
 
     .stat span {
-      color: #f0d8b9;
+      color: #ffc7d3;
       font-size: 13px;
     }
 
@@ -332,7 +333,7 @@
       background: rgba(255, 244, 223, 0.12);
       overflow: hidden;
       margin-bottom: 22px;
-      border: 1px solid rgba(217,170,99,0.18);
+      border: 1px solid rgba(255,86,122,0.22);
     }
 
     .progress {
@@ -354,7 +355,7 @@
       background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
       border-radius: 22px;
       padding: 18px;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+      box-shadow: 0 12px 35px rgba(40,0,12,0.24);
     }
 
     .q-top {
@@ -366,7 +367,7 @@
     }
 
     .q-num {
-      color: #281109;
+      color: #2b000d;
       background: var(--gold);
       padding: 6px 12px;
       border-radius: 999px;
@@ -377,7 +378,7 @@
     .q-text {
       line-height: 1.8;
       font-size: 17px;
-      color: #fff4df;
+      color: #fff0f4;
       flex: 1;
     }
 
@@ -392,7 +393,7 @@
       border-radius: 12px;
       background: rgba(255, 244, 223, 0.10);
       color: var(--cream);
-      border: 1px solid rgba(217, 170, 99, 0.24);
+      border: 1px solid rgba(255, 86, 122, 0.32);
       cursor: pointer;
       font-weight: bold;
       transition: 0.2s ease;
@@ -405,8 +406,8 @@
 
     .rate-btn.selected {
       background: linear-gradient(135deg, var(--pink), var(--gold));
-      color: #1b0d09;
-      box-shadow: 0 0 18px rgba(255,143,163,0.22);
+      color: #2b000d;
+      box-shadow: 0 0 18px rgba(255, 47, 103, 0.30);
     }
 
     .actions {
@@ -419,7 +420,7 @@
       margin: 24px 0;
       padding: 12px;
       border: 1px solid var(--border);
-      background: rgba(27, 13, 9, 0.88);
+      background: rgba(70, 0, 18, 0.90);
       backdrop-filter: blur(12px);
       border-radius: 22px;
       box-shadow: 0 10px 35px rgba(0,0,0,0.35);
@@ -430,8 +431,8 @@
       min-width: 160px;
       padding: 14px 18px;
       border-radius: 16px;
-      color: #211008;
-      background: linear-gradient(135deg, var(--gold), #f0c987);
+      color: #2b000d;
+      background: linear-gradient(135deg, var(--gold), #ff87a6);
       border: none;
       cursor: pointer;
       font-weight: bold;
@@ -439,7 +440,7 @@
 
     .result {
       border: 1px solid var(--border);
-      background: rgba(0,0,0,0.25);
+      background: rgba(40,0,12,0.32);
       border-radius: 24px;
       padding: 20px;
     }
@@ -476,25 +477,26 @@
       display: flex;
       justify-content: space-between;
       gap: 12px;
-      border-top: 1px solid rgba(217,170,99,0.18);
+      border-top: 1px solid rgba(255,86,122,0.22);
       padding-top: 8px;
       margin-top: 8px;
-      color: #f6d9ae;
+      color: #ffd1dc;
     }
 
     .love-msg {
       margin-top: 15px;
       padding: 16px;
       border-radius: 18px;
-      color: #281109;
-      background: linear-gradient(135deg, #fff4df, #d9aa63);
+      color: #2b000d;
+      background: linear-gradient(135deg, #fff0f4, #ff2f67);
+      box-shadow: 0 0 24px rgba(255, 47, 103, 0.22);
       line-height: 1.8;
       font-weight: bold;
     }
 
     .reset-zone {
       border: 1px solid rgba(255, 139, 139, 0.35);
-      background: rgba(0,0,0,0.25);
+      background: rgba(40,0,12,0.32);
       border-radius: 24px;
       padding: 20px;
     }
@@ -506,7 +508,7 @@
     }
 
     .reset-zone p {
-      color: #f5d9b0;
+      color: #ffd6df;
       line-height: 1.8;
       margin-bottom: 18px;
     }
@@ -550,10 +552,129 @@
 
     footer {
       text-align: center;
-      color: #d7b98d;
+      color: #ffb6c8;
       margin-top: 28px;
       font-size: 14px;
       opacity: 0.8;
+    }
+
+
+
+    .single-question-tools {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+      color: #ffd6df;
+      line-height: 1.7;
+    }
+
+    .question-card.single-mode {
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .q-text.big-question {
+      font-size: clamp(23px, 4vw, 36px);
+      text-align: center;
+      width: 100%;
+    }
+
+    .single-nav {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .nav-btn {
+      padding: 13px 15px;
+      border-radius: 15px;
+      border: 1px solid var(--border);
+      background: rgba(255, 244, 223, 0.08);
+      color: var(--cream);
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .jump-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      color: #ffd6df;
+      font-size: 14px;
+    }
+
+    .jump-box input {
+      width: 90px;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(40,0,12,0.28);
+      color: var(--cream);
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .full-table-wrap {
+      overflow-x: auto;
+      margin-top: 16px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .full-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      background: rgba(255,244,223,0.04);
+    }
+
+    .full-table th,
+    .full-table td {
+      padding: 12px;
+      border-bottom: 1px solid rgba(255,86,122,0.22);
+      text-align: right;
+      line-height: 1.7;
+      color: #ffd1dc;
+    }
+
+    .full-table th {
+      color: #2b000d;
+      background: linear-gradient(135deg, var(--gold), #ff87a6);
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .score-pill {
+      display: inline-flex;
+      min-width: 62px;
+      justify-content: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,244,223,0.08);
+      color: var(--cream);
+      font-weight: bold;
+    }
+
+    .score-pill.done {
+      background: linear-gradient(135deg, var(--pink), var(--gold));
+      color: #2b000d;
+      border-color: transparent;
     }
 
     @media (max-width: 760px) {
@@ -570,6 +691,10 @@
 
       .rating {
         grid-template-columns: repeat(6, 1fr);
+      }
+
+      .single-nav {
+        grid-template-columns: 1fr;
       }
 
       .q-top {
@@ -593,18 +718,18 @@
 
   <section class="entry-screen" id="entryScreen">
     <div class="entry-card">
-      <h1>مين بيدخل؟ 🤎</h1>
+      <h1>مين بيدخل؟ ❤️</h1>
 
       <div class="cloud-status">
         <span class="dot" id="cloudDot"></span>
         <span id="cloudText">جاري الاتصال بالحفظ السحابي...</span>
       </div>
 
-      <p>اختار الشخص أولاً، بعدها اضغط متابعة عشان تظهر لك أسئلة تقييم الطرف الثاني.</p>
+      <p>اختار الشخص أولاً، بعدها يبدأ تقييم ذكرى التعارف سؤال بسؤال بدون ما تظهر الأسئلة تحت بعض.</p>
 
       <div class="choose-grid">
         <div class="person-box" id="chooseSaif" onclick="choosePerson('saif')">
-          <div class="emoji">🤎</div>
+          <div class="emoji">❤️</div>
           <h2>سيف</h2>
           <span>سيف يقيم يوري</span>
         </div>
@@ -622,11 +747,11 @@
 
   <div class="container">
     <section class="hero">
-      <div class="badge">🤎 تقييم رومنسي عودي 🤎</div>
-      <h1>تقييم سيف ويوري</h1>
+      <div class="badge">❤️ اليوم ذكرى حبنا وتعارفنا ❤️</div>
+      <h1>تقييم علاقة سيف ويوري</h1>
       <p>
-        كل طرف يجاوب على 100 سؤال بتقييم من 0 إلى 10.
-        كل الإجابات تنحفظ سحابيًا وتظهر للطرفين من أي جهاز.
+        100 تقييم مختلف عن العلاقة كاملة: البداية، الاهتمام، الثقة، الزعل، الرومانسية، والمستقبل.
+        كل سؤال يظهر لحاله، وبعد اختيار الدرجة ينتقل تلقائيًا للسؤال التالي، والنتائج الكاملة تظهر للطرفين من أي جهاز.
       </p>
     </section>
 
@@ -644,6 +769,7 @@
     <nav class="app-tabs">
       <button class="app-tab active" id="tabBtn_questionsTab" onclick="openTab('questionsTab')">الأسئلة</button>
       <button class="app-tab" id="tabBtn_resultsTab" onclick="openTab('resultsTab')">النتائج</button>
+      <button class="app-tab" id="tabBtn_fullResultsTab" onclick="openTab('fullResultsTab')">التقييم الكامل</button>
       <button class="app-tab" id="tabBtn_resetTab" onclick="openTab('resetTab')">التصفير</button>
     </nav>
 
@@ -683,6 +809,10 @@
       <section class="result" id="result"></section>
     </section>
 
+    <section class="tab-content" id="fullResultsTab">
+      <section class="result" id="fullResult"></section>
+    </section>
+
     <section class="tab-content" id="resetTab">
       <div class="reset-zone">
         <h2>تبويب التصفير</h2>
@@ -711,7 +841,7 @@
     </section>
 
     <footer>
-      صنع بحب لسيف ويوري 🤎
+      صنع بحب لسيف ويوري ❤️
     </footer>
   </div>
 
@@ -740,107 +870,107 @@
     const ROOM_ID = "saif_yuri_private_rating";
 
     const questions = [
-      "كم تقيم الاهتمام اليومي بينكم؟",
-      "كم تقيم سرعة الرد على الرسائل؟",
-      "كم تقيم السؤال عن الحال بدون طلب؟",
-      "كم تقيم تذكر التفاصيل الصغيرة؟",
-      "كم تقيم الدعم وقت الزعل؟",
-      "كم تقيم تقدير التعب والمجهود؟",
-      "كم تقيم احترام الوقت والانشغال؟",
-      "كم تقيم الصراحة بينكم؟",
-      "كم تقيم الثقة في العلاقة؟",
-      "كم تقيم الوفاء والالتزام؟",
-      "كم تقيم الكلام الحلو والرومنسي؟",
-      "كم تقيم التعبير عن الحب بالكلام؟",
+      "كم تقيم أول شعور جاك يوم تعارفتوا؟",
+      "كم تقيم جمال بداية قصتكم مع بعض؟",
+      "كم تقيم تأثير وجود الطرف الثاني في حياتك؟",
+      "كم تقيم إحساسك إن العلاقة لها معنى خاص؟",
+      "كم تقيم الذكريات الأولى بينكم؟",
+      "كم تقيم فرحتك يوم تسمع اسم الطرف الثاني؟",
+      "كم تقيم شعورك لما تتذكرون يوم التعارف؟",
+      "كم تقيم اختلاف هالشخص عن باقي الناس؟",
+      "كم تقيم مكانة الطرف الثاني بقلبك؟",
+      "كم تقيم إحساسك إن التعارف كان صدفة جميلة؟",
+      "كم تقيم الراحة النفسية مع الطرف الثاني؟",
+      "كم تقيم الأمان العاطفي بينكم؟",
+      "كم تقيم الثقة وقت الكلام عن المشاعر؟",
+      "كم تقيم سهولة فتح قلبك للطرف الثاني؟",
+      "كم تقيم شعورك إنك مفهوم بدون شرح كثير؟",
+      "كم تقيم الهدوء اللي يعطيك إياه الطرف الثاني؟",
+      "كم تقيم قدرتك تكون على طبيعتك معه؟",
+      "كم تقيم شعورك إن الطرف الثاني بيتك الثاني؟",
+      "كم تقيم الطمأنينة بعد كل مكالمة أو رسالة؟",
+      "كم تقيم قوة الرابط بين قلوبكم؟",
+      "كم تقيم أسلوب الحوار بينكم؟",
+      "كم تقيم وضوح الكلام بدون لف ودوران؟",
+      "كم تقيم الإنصات وقت الطرف الثاني يتكلم؟",
+      "كم تقيم اختيار الكلمات وقت الحساسية؟",
+      "كم تقيم فهم المزاج من طريقة الكلام؟",
+      "كم تقيم سرعة توضيح سوء الفهم؟",
+      "كم تقيم الكلام اللي يطيب الخاطر؟",
+      "كم تقيم الصراحة بدون قسوة؟",
+      "كم تقيم حفظ الكلام بينكم بدون فضفضة للناس؟",
+      "كم تقيم جودة النقاش لما تختلفون؟",
+      "كم تقيم الاهتمام بتفاصيل الطرف الثاني؟",
+      "كم تقيم تذكر الأشياء اللي يحبها؟",
+      "كم تقيم تذكر الأشياء اللي تزعله؟",
+      "كم تقيم السؤال وقت الغياب أو الانشغال؟",
+      "كم تقيم المبادرة برسالة تطمن؟",
+      "كم تقيم ملاحظة تغير مزاج الطرف الثاني؟",
+      "كم تقيم الاهتمام بدون ما ينطلب؟",
+      "كم تقيم الحرص على عدم الإهمال؟",
+      "كم تقيم الشعور إنك مهم ومقدّر؟",
+      "كم تقيم الاهتمام في الأيام العادية مو بس المناسبات؟",
+      "كم تقيم رومانسية العلاقة؟",
+      "كم تقيم الكلام الحلو اللي يجي بوقته؟",
       "كم تقيم التعبير عن الحب بالأفعال؟",
-      "كم تقيم المفاجآت الجميلة؟",
-      "كم تقيم اللطف في التعامل؟",
-      "كم تقيم الحنية وقت الاحتياج؟",
-      "كم تقيم الإحساس بمشاعر الطرف الثاني؟",
-      "كم تقيم الاحتواء وقت الضغط؟",
-      "كم تقيم إرسال رسائل حب مفاجئة؟",
-      "كم تقيم تلطيف الجو وقت الزعل؟",
-      "كم تقيم طريقة الاعتذار؟",
-      "كم تقيم قبول الاعتذار؟",
-      "كم تقيم الهدوء وقت الخلاف؟",
-      "كم تقيم عدم رفع الصوت وقت النقاش؟",
-      "كم تقيم حل المشاكل بسرعة؟",
-      "كم تقيم عدم تكرار نفس الخطأ؟",
-      "كم تقيم احترام رأي الطرف الثاني؟",
-      "كم تقيم عدم العناد الزائد؟",
-      "كم تقيم المصارحة وقت الضيق؟",
-      "كم تقيم إنهاء الزعل بطريقة لطيفة؟",
-      "كم تقيم مشاركة تفاصيل اليوم؟",
-      "كم تقيم الاهتمام بالمناسبات الخاصة؟",
-      "كم تقيم تذكر تاريخ بداية العلاقة؟",
-      "كم تقيم تذكر الأشياء المفضلة؟",
-      "كم تقيم معرفة الأشياء التي تزعج الطرف الثاني؟",
-      "كم تقيم محاولة إسعاد الطرف الثاني؟",
-      "كم تقيم المبادرة بالكلام؟",
-      "كم تقيم المبادرة بالصلح؟",
-      "كم تقيم المبادرة بالسؤال؟",
-      "كم تقيم المبادرة بالاهتمام؟",
-      "كم تقيم الاحترام أمام الناس؟",
-      "كم تقيم الاحترام في الخاص؟",
-      "كم تقيم احترام الخصوصية؟",
-      "كم تقيم حفظ الأسرار؟",
-      "كم تقيم عدم إحراج الطرف الثاني؟",
-      "كم تقيم الدفاع عن العلاقة؟",
-      "كم تقيم الوضوح في الحدود؟",
-      "كم تقيم الأمان في الكلام؟",
-      "كم تقيم الشعور بالراحة؟",
-      "كم تقيم الشعور بالأمان؟",
-      "كم تقيم الغيرة بطريقة صحية؟",
-      "كم تقيم عدم المبالغة في الغيرة؟",
-      "كم تقيم الثقة رغم الغيرة؟",
-      "كم تقيم تفهم الطرف الثاني؟",
-      "كم تقيم عدم سوء الظن؟",
-      "كم تقيم عدم التجاهل وقت الانشغال؟",
-      "كم تقيم إخبار الطرف الثاني عند الانشغال؟",
+      "كم تقيم التعبير عن الشوق؟",
+      "كم تقيم المفاجآت البسيطة اللي تفرح القلب؟",
+      "كم تقيم الرسائل اللي تبقى بالذاكرة؟",
+      "كم تقيم الغزل بطريقة لطيفة؟",
+      "كم تقيم الاحتفال بالمناسبات الخاصة بينكم؟",
+      "كم تقيم إحساسك إن الحب واضح مو مخفي؟",
+      "كم تقيم دفء العلاقة وقت البعد؟",
+      "كم تقيم طريقة التعامل وقت الزعل؟",
+      "كم تقيم الاعتذار لما يصير خطأ؟",
+      "كم تقيم قبول الاعتذار بدون تعقيد؟",
+      "كم تقيم محاولة إصلاح المشكلة بسرعة؟",
+      "كم تقيم عدم ترك الزعل يطول؟",
+      "كم تقيم احترام المشاعر وقت الخلاف؟",
+      "كم تقيم عدم استخدام الكلام الجارح؟",
+      "كم تقيم القدرة على الرجوع لبعض بعد الخصام؟",
+      "كم تقيم التعلم من الأخطاء السابقة؟",
+      "كم تقيم قوة العلاقة بعد كل مشكلة تعدي؟",
+      "كم تقيم الاحترام بينكم في كل الظروف؟",
       "كم تقيم تقدير ظروف الطرف الثاني؟",
-      "كم تقيم الصبر على بعض؟",
-      "كم تقيم حسن النية؟",
+      "كم تقيم احترام الخصوصية والمساحة الشخصية؟",
+      "كم تقيم عدم الضغط وقت التعب؟",
+      "كم تقيم احترام حدود العلاقة؟",
+      "كم تقيم الوفاء بالوعود؟",
+      "كم تقيم الشعور إن الطرف الثاني يحافظ عليك؟",
+      "كم تقيم عدم التقليل من مشاعرك؟",
+      "كم تقيم التعامل بلطف حتى وقت الضغط؟",
+      "كم تقيم الإخلاص في النية والمشاعر؟",
       "كم تقيم الضحك والوناسة بينكم؟",
-      "كم تقيم المزح بدون جرح؟",
-      "كم تقيم خفة الدم في العلاقة؟",
-      "كم تقيم صنع ذكريات جميلة؟",
-      "كم تقيم مشاركة الصور واللحظات؟",
-      "كم تقيم تشجيع الطرف الثاني؟",
-      "كم تقيم الفخر بإنجازات الطرف الثاني؟",
-      "كم تقيم الوقوف مع الطرف الثاني؟",
-      "كم تقيم التحفيز وقت الكسل؟",
-      "كم تقيم الاهتمام بالأحلام والطموحات؟",
-      "كم تقيم التخطيط للمستقبل؟",
-      "كم تقيم جدية العلاقة؟",
-      "كم تقيم وضوح النوايا؟",
-      "كم تقيم الكلام عن المستقبل؟",
-      "كم تقيم التعاون بينكم؟",
-      "كم تقيم تحمل المسؤولية؟",
-      "كم تقيم الالتزام بالوعود؟",
-      "كم تقيم عدم كسر الخاطر؟",
-      "كم تقيم مراعاة المشاعر؟",
-      "كم تقيم عدم البرود في العلاقة؟",
-      "كم تقيم جودة المكالمات بينكم؟",
-      "كم تقيم طول النفس في النقاش؟",
-      "كم تقيم الاهتمام بنبرة الكلام؟",
-      "كم تقيم الرد وقت الحاجة؟",
-      "كم تقيم عدم ترك الطرف الثاني محتار؟",
-      "كم تقيم الوضوح عند الزعل؟",
-      "كم تقيم طيبة القلب؟",
-      "كم تقيم نقاء العلاقة؟",
-      "كم تقيم الحب الحقيقي؟",
-      "كم تقيم الإخلاص في المشاعر؟",
-      "كم تقيم الرومانسية في المناسبات؟",
-      "كم تقيم الرسائل قبل النوم؟",
-      "كم تقيم الرسائل أول اليوم؟",
-      "كم تقيم قول كلمة أحبك؟",
-      "كم تقيم الاهتمام بالتفاصيل العاطفية؟",
-      "كم تقيم جعل الطرف الثاني أولوية؟",
-      "كم تقيم الشعور بأنك مرغوب؟",
-      "كم تقيم عدم التغير المفاجئ؟",
-      "كم تقيم الاستمرار بنفس الشغف؟",
-      "كم تقيم العلاقة بشكل عام؟"
-    ];
+      "كم تقيم خفة الدم بدون جرح؟",
+      "كم تقيم اللحظات العفوية الجميلة؟",
+      "كم تقيم مشاركة الأشياء اليومية البسيطة؟",
+      "كم تقيم الإحساس إنكم أصحاب قبل ما تكونون أحباب؟",
+      "كم تقيم المتعة في الكلام الطويل؟",
+      "كم تقيم جمال المكالمات بينكم؟",
+      "كم تقيم الذكريات اللي صنعتوها مع بعض؟",
+      "كم تقيم الصور أو المقاطع اللي تذكركم ببعض؟",
+      "كم تقيم شعورك إن الوقت يحلى معه؟",
+      "كم تقيم دعم الطرف الثاني لأحلامك؟",
+      "كم تقيم تشجيعه لك وقت الكسل أو الإحباط؟",
+      "كم تقيم فخره فيك وبإنجازاتك؟",
+      "كم تقيم وقوفه معك وقت تحتاجه؟",
+      "كم تقيم الإيمان بمستقبل العلاقة؟",
+      "كم تقيم الكلام عن المستقبل بجدية؟",
+      "كم تقيم وضوح النوايا بينكم؟",
+      "كم تقيم الإحساس إن العلاقة تكبر للأحسن؟",
+      "كم تقيم التعاون بينكم كفريق واحد؟",
+      "كم تقيم رغبتك تستمر القصة لسنين؟",
+      "كم تقيم ثبات المشاعر مع الوقت؟",
+      "كم تقيم عدم التغير المفاجئ بدون سبب؟",
+      "كم تقيم الشغف اللي باقي بينكم؟",
+      "كم تقيم إحساسك إن الطرف الثاني اختيارك الجميل؟",
+      "كم تقيم قدرتكم تتجاوزون أي صعوبة؟",
+      "كم تقيم نقاء العلاقة من الشكوك؟",
+      "كم تقيم حبك للطرف الثاني اليوم مقارنة بالبداية؟",
+      "كم تقيم جمال يوم تعارفكم كذكرى؟",
+      "كم تقيم العلاقة كاملة من قلبك؟",
+      "كم تقيم رغبتك تقول للطرف الثاني: وجودك أجمل صدفة؟"
+];
 
     let data = {
       active: null,
@@ -850,6 +980,7 @@
       }
     };
 
+    let currentQuestionIndex = 0;
     let pendingPerson = null;
     let db = null;
     let roomRef = null;
@@ -862,6 +993,7 @@
     const chooseYuriBox = document.getElementById("chooseYuri");
     const questionsBox = document.getElementById("questions");
     const resultBox = document.getElementById("result");
+    const fullResultBox = document.getElementById("fullResult");
     const cloudDot = document.getElementById("cloudDot");
     const cloudText = document.getElementById("cloudText");
     const saveLine = document.getElementById("saveLine");
@@ -890,6 +1022,10 @@
 
       if (tabId === "resultsTab") {
         renderResults();
+      }
+
+      if (tabId === "fullResultsTab") {
+        renderFullResults();
       }
 
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -933,6 +1069,10 @@
 
             if (currentTab === "resultsTab") {
               renderResults();
+            }
+
+            if (currentTab === "fullResultsTab") {
+              renderFullResults();
             }
           }
         }, (error) => {
@@ -979,6 +1119,7 @@
       if (!pendingPerson) return;
 
       data.active = pendingPerson;
+      currentQuestionIndex = findFirstUnanswered(data.active);
       entryScreen.style.display = "none";
 
       renderCurrentTitle();
@@ -1020,29 +1161,94 @@
       return data.answers[data.active] || {};
     }
 
+
+    function hasAnswer(person, index) {
+      return Object.prototype.hasOwnProperty.call(data.answers[person] || {}, index);
+    }
+
+    function findFirstUnanswered(person = data.active) {
+      if (!person) return 0;
+
+      for (let i = 0; i < questions.length; i++) {
+        if (!hasAnswer(person, i)) return i;
+      }
+
+      return questions.length - 1;
+    }
+
+    function goToQuestion(index) {
+      const nextIndex = Math.max(0, Math.min(questions.length - 1, Number(index) || 0));
+      currentQuestionIndex = nextIndex;
+      renderQuestions();
+      updateStats();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function goPrevQuestion() {
+      goToQuestion(currentQuestionIndex - 1);
+    }
+
+    function goNextQuestion() {
+      goToQuestion(currentQuestionIndex + 1);
+    }
+
+    function jumpToQuestion() {
+      const input = document.getElementById("jumpQuestionInput");
+      const wanted = Number(input?.value || 1) - 1;
+      goToQuestion(wanted);
+    }
+
     function renderQuestions() {
       const answers = getActiveAnswers();
 
-      questionsBox.innerHTML = questions.map((q, i) => {
-        const selected = answers[i];
-
-        const buttons = Array.from({ length: 11 }, (_, n) => `
-          <button
-            class="rate-btn ${Number(selected) === n ? "selected" : ""}"
-            onclick="rateQuestion(${i}, ${n})"
-          >${n}</button>
-        `).join("");
-
-        return `
-          <div class="question-card">
-            <div class="q-top">
-              <div class="q-text">${q}</div>
-              <div class="q-num">سؤال ${i + 1}</div>
-            </div>
-            <div class="rating">${buttons}</div>
+      if (!data.active) {
+        questionsBox.innerHTML = `
+          <div class="question-card single-mode">
+            <div class="q-text big-question">اختر سيف أو يوري أولاً عشان يبدأ التقييم.</div>
           </div>
         `;
-      }).join("");
+        return;
+      }
+
+      const i = currentQuestionIndex;
+      const q = questions[i];
+      const selected = answers[i];
+      const answeredText = hasAnswer(data.active, i) ? `إجابتك الحالية: ${selected} من 10` : "لسه ما جاوبت على هذا السؤال";
+
+      const buttons = Array.from({ length: 11 }, (_, n) => `
+        <button
+          class="rate-btn ${Number(selected) === n ? "selected" : ""}"
+          onclick="rateQuestion(${i}, ${n})"
+        >${n}</button>
+      `).join("");
+
+      questionsBox.innerHTML = `
+        <div class="single-question-tools">
+          <div>سؤال ${i + 1} من ${questions.length}</div>
+          <div>${answeredText}</div>
+        </div>
+
+        <div class="question-card single-mode">
+          <div class="q-top">
+            <div class="q-text big-question">${q}</div>
+            <div class="q-num">${i + 1} / ${questions.length}</div>
+          </div>
+
+          <div class="rating">${buttons}</div>
+
+          <div class="single-nav">
+            <button class="nav-btn" onclick="goPrevQuestion()" ${i === 0 ? "disabled" : ""}>السؤال السابق</button>
+            <button class="nav-btn" onclick="goToQuestion(findFirstUnanswered())">أول سؤال ناقص</button>
+            <button class="nav-btn" onclick="goNextQuestion()" ${i === questions.length - 1 ? "disabled" : ""}>السؤال التالي</button>
+          </div>
+
+          <div class="jump-box">
+            <span>انتقال مباشر إلى سؤال رقم</span>
+            <input id="jumpQuestionInput" type="number" min="1" max="${questions.length}" value="${i + 1}" onkeydown="if(event.key === 'Enter') jumpToQuestion()">
+            <button class="nav-btn" onclick="jumpToQuestion()">انتقال</button>
+          </div>
+        </div>
+      `;
     }
 
     function rateQuestion(index, value) {
@@ -1050,9 +1256,16 @@
 
       data.answers[data.active][index] = value;
 
-      renderQuestions();
       updateStats();
       saveAnswerToCloud(index, value);
+
+      if (index < questions.length - 1) {
+        currentQuestionIndex = index + 1;
+        renderQuestions();
+      } else {
+        renderQuestions();
+        openTab("fullResultsTab");
+      }
     }
 
     function calc(person) {
@@ -1085,7 +1298,7 @@
     }
 
     function loveLevel(percent) {
-      if (percent >= 95) return "حب أسطوري وفوق الخيال 🤎";
+      if (percent >= 95) return "حب أسطوري وفوق الخيال ❤️";
       if (percent >= 90) return "حب قوي جدًا واهتمام واضح ✨";
       if (percent >= 80) return "علاقة جميلة جدًا ومليانة مشاعر 🌙";
       if (percent >= 70) return "حب حلو ويحتاج شوية تقوية 🤍";
@@ -1154,6 +1367,71 @@
           نسبة اكتمال التقييم للطرفين: ${completePercent.toFixed(0)}%
           <br>
           ${loveLevel(finalPercent)}
+          <br><br>
+          <button class="main-btn" onclick="openTab('fullResultsTab')">عرض كل الـ100 تقييم للطرفين</button>
+        </div>
+      `;
+    }
+
+
+    function scoreCell(person, index) {
+      if (!hasAnswer(person, index)) return `<span class="score-pill">لم يتم</span>`;
+      return `<span class="score-pill done">${Number(data.answers[person][index])} / 10</span>`;
+    }
+
+    function renderFullResults() {
+      const saif = calc("saif");
+      const yuri = calc("yuri");
+      const totalAnswered = saif.answered + yuri.answered;
+      const completePercent = (totalAnswered / (questions.length * 2)) * 100;
+
+      const rows = questions.map((q, i) => `
+        <tr>
+          <td>${i + 1}</td>
+          <td>${q}</td>
+          <td>${scoreCell("saif", i)}</td>
+          <td>${scoreCell("yuri", i)}</td>
+        </tr>
+      `).join("");
+
+      fullResultBox.innerHTML = `
+        <h2>التقييم الكامل للطرفين</h2>
+        <p style="color:#ffd6df; line-height:1.9;">
+          هنا تظهر كل الأسئلة الـ100 للطرفين في نفس المكان. سيف يشوف تقييمه وتقييم يوري، ويوري تشوف تقييمها وتقييم سيف من أي جهاز بعد الحفظ السحابي.
+        </p>
+
+        <div class="result-grid">
+          <div class="result-box">
+            <div>سيف قيّم يوري</div>
+            <strong>${saif.percent.toFixed(0)}%</strong>
+            <div class="result-row"><span>الإجابات</span><span>${saif.answered} من 100</span></div>
+            <div class="result-row"><span>المتوسط</span><span>${saif.avg.toFixed(1)} من 10</span></div>
+          </div>
+
+          <div class="result-box">
+            <div>يوري قيّمت سيف</div>
+            <strong>${yuri.percent.toFixed(0)}%</strong>
+            <div class="result-row"><span>الإجابات</span><span>${yuri.answered} من 100</span></div>
+            <div class="result-row"><span>المتوسط</span><span>${yuri.avg.toFixed(1)} من 10</span></div>
+          </div>
+        </div>
+
+        <div class="love-msg">
+          نسبة اكتمال التقييم الكامل للطرفين: ${completePercent.toFixed(0)}%
+        </div>
+
+        <div class="full-table-wrap">
+          <table class="full-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>التقييم</th>
+                <th>سيف → يوري</th>
+                <th>يوري → سيف</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
         </div>
       `;
     }
@@ -1179,6 +1457,10 @@
 
       if (currentTab === "resultsTab") {
         renderResults();
+      }
+
+      if (currentTab === "fullResultsTab") {
+        renderFullResults();
       }
 
       try {
@@ -1213,6 +1495,10 @@
         renderResults();
       }
 
+      if (currentTab === "fullResultsTab") {
+        renderFullResults();
+      }
+
       try {
         await setDoc(roomRef, {
           answers: {
@@ -1238,6 +1524,7 @@
       renderCurrentTitle();
       renderQuestions();
       renderResults();
+      renderFullResults();
       initFirebase();
     }
 
@@ -1245,6 +1532,11 @@
     window.enterSite = enterSite;
     window.backToChoose = backToChoose;
     window.rateQuestion = rateQuestion;
+    window.goToQuestion = goToQuestion;
+    window.goPrevQuestion = goPrevQuestion;
+    window.goNextQuestion = goNextQuestion;
+    window.jumpToQuestion = jumpToQuestion;
+    window.findFirstUnanswered = findFirstUnanswered;
     window.openTab = openTab;
     window.resetCurrent = resetCurrent;
     window.resetAll = resetAll;
